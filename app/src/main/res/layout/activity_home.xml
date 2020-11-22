@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.HomeActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleMarginStart="24dp"
+        app:titleTextColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/tv_no_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="24dp"
+        android:text="@string/tap_plus_to_get_started"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:drawableTopCompat="@drawable/ic_papers"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_recognized_text"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingBottom="100dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tb_home"
+        tools:listitem="@layout/layout_recognized_text_list_item" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_show_hide_scan_menus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_add_32dp"
+        app:backgroundTint="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_scan_from_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_photo_32dp"
+        android:visibility="gone"
+        app:backgroundTint="@color/colorAccent"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toTopOf="@+id/fab_show_hide_scan_menus"
+        app:layout_constraintEnd_toEndOf="@id/fab_show_hide_scan_menus"
+        app:layout_constraintStart_toStartOf="@id/fab_show_hide_scan_menus" />
+
+    <TextView
+        android:id="@+id/tv_scan_from_image_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/bg_darker_brown_round_corners"
+        android:padding="6dp"
+        android:text="@string/scan_from_image"
+        android:textColor="@android:color/white"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/fab_scan_from_image"
+        app:layout_constraintEnd_toStartOf="@id/fab_scan_from_image"
+        app:layout_constraintTop_toTopOf="@id/fab_scan_from_image" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_scan_from_camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_camera_white_36dp"
+        android:visibility="gone"
+        app:backgroundTint="@color/colorAccent"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toTopOf="@+id/fab_scan_from_image"
+        app:layout_constraintEnd_toEndOf="@id/fab_show_hide_scan_menus"
+        app:layout_constraintStart_toStartOf="@id/fab_show_hide_scan_menus" />
+
+    <TextView
+        android:id="@+id/tv_scan_from_camera_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/bg_darker_brown_round_corners"
+        android:padding="6dp"
+        android:text="@string/scan_from_camera"
+        android:textColor="@android:color/white"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/fab_scan_from_camera"
+        app:layout_constraintEnd_toStartOf="@id/fab_scan_from_camera"
+        app:layout_constraintTop_toTopOf="@id/fab_scan_from_camera" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
